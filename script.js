@@ -1,41 +1,78 @@
-// 20 MAKANAN KHAS JAWA TIMUR
-const makanan = [
-    "Rawon", "Soto Lamongan", "Rujak Cingur", "Tahu Tek",
-    "Lontong Balap", "Tahu Campur", "Pecel Madiun", "Sate Madura",
-    "Nasi Krawu", "Nasi Pecel Tulungagung", "Lodeh Kikil",
-    "Sego Sambel", "Krengsengan", "Botok Tempe", "Ayam Lodho",
-    "Nasi Goreng Jawa", "Semanggi Surabaya", "Soto Madura",
-    "Bakso Malang", "Rawon Setan"
-];
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
 
-// 10 MINUMAN TRENDING
-const minuman = [
-    "Es Kopi Susu Gula Aren", "Matcha Latte", "Thai Tea",
-    "Es Coklat Premium", "Es Lemon Tea", "Milkshake Oreo",
-    "Es Yakult Lemon", "Es Cappuccino", "Brown Sugar Boba",
-    "Es Soda Gembira"
-];
+header {
+    background: #c0392b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
 
-// Render makanan
-const makananList = document.getElementById("makananList");
-makanan.forEach((item, i) => {
-    const card = document.createElement("div");
-    card.className = "menu-card";
-    card.innerHTML = `
-        <h3>${i + 1}. ${item}</h3>
-        <p>Makanan khas Jawa Timur.</p>
-    `;
-    makananList.appendChild(card);
-});
+.menu-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
 
-// Render minuman
-const minumanList = document.getElementById("minumanList");
-minuman.forEach((item, i) => {
-    const card = document.createElement("div");
-    card.className = "menu-card";
-    card.innerHTML = `
-        <h3>${i + 1}. ${item}</h3>
-        <p>Minuman kekinian & trending.</p>
-    `;
-    minumanList.appendChild(card);
-});
+.menu-section h2 {
+    text-align: center;
+    color: #c0392b;
+    margin-bottom: 15px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu-card h3 {
+    color: #b0322b;
+    margin: 10px 0 5px;
+}
+
+.menu-card a {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 6px 12px;
+    background: #c0392b;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.menu-card a:hover {
+    background: #e74c3c;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
