@@ -1,78 +1,61 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-}
+// DATA MAKANAN (20 MENU)
+const makanan = [
+    {nama: "Rawon", foto: "https://source.unsplash.com/featured/?rawon", link:"#rawon"},
+    {nama: "Soto Lamongan", foto: "https://source.unsplash.com/featured/?soto", link:"#soto-lamongan"},
+    {nama: "Rujak Cingur", foto: "https://source.unsplash.com/featured/?rujak", link:"#rujak-cingur"},
+    {nama: "Tahu Tek", foto:"https://source.unsplash.com/featured/?tahu", link:"#tahu-tek"},
+    {nama: "Lontong Balap", foto:"https://source.unsplash.com/featured/?lontong", link:"#lontong-balap"},
+    {nama: "Tahu Campur", foto:"https://source.unsplash.com/featured/?tahu", link:"#tahu-campur"},
+    {nama: "Pecel Madiun", foto:"https://source.unsplash.com/featured/?pecel", link:"#pecel-madiun"},
+    {nama: "Sate Madura", foto:"https://source.unsplash.com/featured/?sate", link:"#sate-madura"},
+    {nama: "Nasi Krawu", foto:"https://source.unsplash.com/featured/?rice", link:"#nasi-krawu"},
+    {nama: "Nasi Pecel Tulungagung", foto:"https://source.unsplash.com/featured/?pecel", link:"#pecel"},
+    {nama: "Lodeh Kikil", foto:"https://source.unsplash.com/featured/?lodeh", link:"#lodeh-kikil"},
+    {nama: "Sego Sambel", foto:"https://source.unsplash.com/featured/?sambal", link:"#sego-sambel"},
+    {nama: "Krengsengan", foto:"https://source.unsplash.com/featured/?meat", link:"#krengsengan"},
+    {nama: "Botok Tempe", foto:"https://source.unsplash.com/featured/?tempe", link:"#botok-tempe"},
+    {nama: "Ayam Lodho", foto:"https://source.unsplash.com/featured/?ayam", link:"#ayam-lodho"},
+    {nama: "Nasi Goreng Jawa", foto:"https://source.unsplash.com/featured/?friedrice", link:"#nasgor-jawa"},
+    {nama: "Semanggi Surabaya", foto:"https://source.unsplash.com/featured/?vegetables", link:"#semanggi"},
+    {nama: "Soto Madura", foto:"https://source.unsplash.com/featured/?soto", link:"#soto-madura"},
+    {nama: "Bakso Malang", foto:"https://source.unsplash.com/featured/?bakso", link:"#bakso-malang"},
+    {nama: "Rawon Setan", foto:"https://source.unsplash.com/featured/?rawon", link:"#rawon-setan"}
+];
 
-header {
-    background: #c0392b;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
+// DATA MINUMAN (10 MENU)
+const minuman = [
+    {nama:"Es Kopi Susu Gula Aren", foto:"https://source.unsplash.com/featured/?icedcoffee", link:"#kopi-gula-aren"},
+    {nama:"Matcha Latte", foto:"https://source.unsplash.com/featured/?matcha", link:"#matcha"},
+    {nama:"Thai Tea", foto:"https://source.unsplash.com/featured/?thaitea", link:"#thaitea"},
+    {nama:"Es Coklat Premium", foto:"https://source.unsplash.com/featured/?chocolate-drink", link:"#coklat"},
+    {nama:"Es Lemon Tea", foto:"https://source.unsplash.com/featured/?lemontea", link:"#lemontea"},
+    {nama:"Milkshake Oreo", foto:"https://source.unsplash.com/featured/?milkshake", link:"#milkshake"},
+    {nama:"Es Yakult Lemon", foto:"https://source.unsplash.com/featured/?yakult", link:"#yakult"},
+    {nama:"Es Cappuccino", foto:"https://source.unsplash.com/featured/?cappuccino", link:"#cappuccino"},
+    {nama:"Brown Sugar Boba", foto:"https://source.unsplash.com/featured/?boba", link:"#boba"},
+    {nama:"Es Soda Gembira", foto:"https://source.unsplash.com/featured/?soda", link:"#soda-gembira"}
+];
 
-.menu-section {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
-}
+// Render makanan
+const makananList = document.getElementById("makananList");
+makanan.forEach(item => {
+    makananList.innerHTML += `
+        <div class="menu-card">
+            <img src="${item.foto}" alt="${item.nama}">
+            <h3>${item.nama}</h3>
+            <a href="${item.link}">Lihat Menu</a>
+        </div>
+    `;
+});
 
-.menu-section h2 {
-    text-align: center;
-    color: #c0392b;
-    margin-bottom: 15px;
-}
-
-.menu-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-}
-
-.menu-card {
-    background: white;
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.menu-card:hover {
-    transform: scale(1.05);
-}
-
-.menu-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.menu-card h3 {
-    color: #b0322b;
-    margin: 10px 0 5px;
-}
-
-.menu-card a {
-    display: inline-block;
-    margin-top: 5px;
-    padding: 6px 12px;
-    background: #c0392b;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-.menu-card a:hover {
-    background: #e74c3c;
-}
-
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
+// Render minuman
+const minumanList = document.getElementById("minumanList");
+minuman.forEach(item => {
+    minumanList.innerHTML += `
+        <div class="menu-card">
+            <img src="${item.foto}" alt="${item.nama}">
+            <h3>${item.nama}</h3>
+            <a href="${item.link}">Lihat Menu</a>
+        </div>
+    `;
+});
